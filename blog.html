@@ -8,11 +8,13 @@
     <!-- Daisyui CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/b7e3d7a966.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header class='sticky top-0 z-50 backdrop-blur-lg'>
-        <!-- sticky top-0 z-50 -->
+        <!-- navbar started -->
         <div class=" navbar bg-orange-50 px-32">
             <div class="navbar-start">
                 <div class="dropdown block md:hidden">
@@ -44,4 +46,51 @@
 
 
         </div>
+        <!-- navbar ended -->
     </header>
+    <main class='px-32 mt-10'>
+        <h1 class="font-bold text-4xl mb-8">Important FAQ <i class="fa-regular fa-circle-question"></i></h1>
+        <!-- accordon started -->
+        <div class="collapse collapse-arrow bg-base-200 border">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">What is the fullform of 'DOM'?</div>
+            <div class="collapse-content">
+                <p>Document Object Module</p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200 border">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">What are the differences between querySelector and
+                querySelectorAll?</div>
+            <div class="collapse-content">
+                <p>querySelector returns the first element that matches a specified CSS selector, querySelectorAll
+                    returns a static NodeList of all elements that match the specified CSS selector.
+                </p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200 border">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">How can you remove an element from the DOM?</div>
+            <div class="collapse-content">
+                <p>To remove an element, use the removeChild method. First, get a reference to the parent element, then
+                    call removeChild:</p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200 border">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium"> What is event delegation and how does it work?</div>
+            <div class="collapse-content">
+                <p>Event delegation involves adding a single event listener to a parent element to manage events for its
+                    children. It takes advantage of event bubbling.</p>
+            </div>
+        </div>
+        <!-- accordon ended -->
+    </main>
+    <footer class=" bg-orange-50 mt-32 pb-40">
+
+
+    </footer>
+    <!-- footer ended -->
+</body>
+
+</html>
