@@ -14,19 +14,20 @@ let amountLeft = parseFloat(document.getElementById('mainAmount').innerText);
 
 
 document.getElementById('dbtn1').addEventListener('click', function () {
-    modalSet('dinput')
+    // loca, why
     cal('dinput', 'noaDonate')
-    mainCal('dinput', 'noaDonate', 'mainAmount')
+    mainCal('dinput', 'noaDonate', 'mainAmount', 'Flood', 'Noakhali')
+    // input.forEach(input => input.value = '');
 });
 document.getElementById('dbtn2').addEventListener('click', function () {
-    modalSet('dinput2')
+
     cal('dinput2', 'feniAmount')
-    mainCal('dinput2', 'feniAmount', 'mainAmount')
+    mainCal('dinput2', 'feniAmount', 'mainAmount', 'Flood Relif', 'Feni')
 });
 document.getElementById('dbtn3').addEventListener('click', function () {
-    modalSet('dinput3')
+
     cal('dinput3', 'quotaAmout')
-    mainCal('dinput3', 'quotaAmout', 'mainAmount')
+    mainCal('dinput3', 'quotaAmout', 'mainAmount', 'Aid for Injured', ' Quota Movement')
 });
 
 

@@ -12,16 +12,19 @@ function showHistory(id) {
 }
 
 // Modal function
-function modalSet(id) {
-    let donationAmount = document.querySelector(`#${id}`).value;
-    let amount = parseFloat(donationAmount);
-    if (isNaN(amount) || amount <= 0) {
-        alert('Invalid amount');
-    }
-    else {
-        document.getElementById('my_modal_1').showModal();
-    }
+function modalSet() {
+    document.getElementById('my_modal_1').showModal();
 }
+// function modalSet(id) {
+//     let donationAmount = document.querySelector(`#${id}`).value;
+//     let amount = parseFloat(donationAmount);
+//     if (isNaN(amount) || amount <= 0) {
+//         alert('Invalid amount');
+//     }
+//     else {
+//         document.getElementById('my_modal_1').showModal();
+//     }
+// }
 
 // Calculation function
 function cal(in_id, up_id) {
@@ -33,28 +36,38 @@ function cal(in_id, up_id) {
     console.log(totaldona)
 }
 
-// Main cal
-function mainCal(in_id, prev_donate, m_amount) {
+// Main calculation function
+function mainCal(in_id, prev_donate, m_amount, why, loca) {
     let doamount = parseFloat(document.getElementById(in_id).value);
-
     let noakhaliDona = parseFloat(document.getElementById(prev_donate).innerText);
-    if (isNaN(doamount) || isNaN(noakhaliDona) || doamount <= 0) {
+    // add transition to history
+    const div = document.createElement('div');
+    const currentDate = Date();
 
+    div.innerHTML = `
+        <p>${doamount.toFixed(2)} Taka is donated for ${why} at ${loca}, Bangladesh</p>
+        <p>Date: ${currentDate.toLocaleString()}</p>
+    `;
+    document.getElementById('historyWillBeWrittenHere').appendChild(div);
+
+    if (isNaN(doamount) || isNaN(noakhaliDona) || doamount <= 0) {
+        alert('Invalid amount.');
+        return;
+    }
+    if (amountLeft === 0) {
+        alert('Your amount is zero');
         return;
     }
 
+    if (doamount > amountLeft) {
+        alert('Insufficient balance');
+        return;
+    }
     let totaldona1 = doamount + noakhaliDona;
-
-    document.getElementById(prev_donate).innerText = totaldona1;
-
+    document.getElementById(prev_donate).innerText = totaldona1.toFixed(2);
     amountLeft -= doamount;
-    document.getElementById(m_amount).innerText = amountLeft;
-    // if (amountLeft < 0) {
-    //     document.getElementById(m_amount).innerText = '0.00';
+    document.getElementById(m_amount).innerText = amountLeft.toFixed(2);
 
-    //     alert('Not enough amount left')
-
-
-    //     return;
-    // }
+    document.getElementById(in_id).value = '';
+    modalSet();
 }
