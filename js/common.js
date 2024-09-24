@@ -15,16 +15,7 @@ function showHistory(id) {
 function modalSet() {
     document.getElementById('my_modal_1').showModal();
 }
-// function modalSet(id) {
-//     let donationAmount = document.querySelector(`#${id}`).value;
-//     let amount = parseFloat(donationAmount);
-//     if (isNaN(amount) || amount <= 0) {
-//         alert('Invalid amount');
-//     }
-//     else {
-//         document.getElementById('my_modal_1').showModal();
-//     }
-// }
+
 
 // Calculation function
 function cal(in_id, up_id) {
@@ -42,14 +33,15 @@ function mainCal(in_id, prev_donate, m_amount, why, loca) {
     let noakhaliDona = parseFloat(document.getElementById(prev_donate).innerText);
     // add transition to history
     const div = document.createElement('div');
-    const currentDate = Date();
-
+    div.classList.add("border", "p-2", "rounded-lg", "mb-2");
+    // date setting
+    const currentDate = new Date();
+    const ctime = currentDate.toString();
     div.innerHTML = `
-        <p>${doamount.toFixed(2)} Taka is donated for ${why} at ${loca}, Bangladesh</p>
-        <p>Date: ${currentDate.toLocaleString()}</p>
+        <p><strong>${doamount.toFixed(2)} Taka is donated for ${why} at ${loca}, Bangladesh</strong></p>
+        <p>Date: ${ctime.toLocaleString()}</p>
     `;
     document.getElementById('historyWillBeWrittenHere').appendChild(div);
-
     if (isNaN(doamount) || isNaN(noakhaliDona) || doamount <= 0) {
         alert('Invalid amount.');
         return;

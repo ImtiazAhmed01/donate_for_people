@@ -8,9 +8,20 @@
     <!-- Daisyui CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font  link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<style>
+    .lexend {
+        font-family: "Lexend", sans-serif;
+        font-optical-sizing: auto;
+    }
+</style>
+
+<body class="lexend">
     <header class='sticky top-0 z-50 backdrop-blur-lg'>
         <!-- sticky top-0 z-50 -->
         <div class=" navbar bg-orange-50 lg:px-32">
@@ -171,7 +182,7 @@
 
         <!-- history started -->
         <section>
-            <div id="historyWillBeWrittenHere" class="border p-2 rounded-lg hidden">
+            <div id="historyWillBeWrittenHere">
 
 
             </div>
@@ -182,10 +193,7 @@
     </main>
     <!-- Footer started -->
     <footer class=" bg-orange-50 pb-40">
-        <!-- <a class="btn bg-[#B4F461] hidden md:block pt-3.5"
-            onclick="document.getElementById('date').innerHTML =Date()">Blog</a>
-        <p id="date">
-        </p> -->
+
     </footer>
     <!-- footer ended -->
 
